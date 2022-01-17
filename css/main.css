@@ -1,0 +1,820 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+  :root {
+    --primary-color: #457b9d;
+    --secondary-color: #f1faee;
+    --accent-color: #e63946;
+    --dark-color: #1D3557;
+  }
+
+  /************************** UTILITY *****************************/
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+  }
+
+  .flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px; 
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    color: #333;
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  /************************** BASE STYLES *****************************/
+
+  * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    background: var(--accent-color);
+  }
+
+  body {
+    color: #333;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+
+  h1, 
+  h2 {
+    line-height: 1.2;
+    margin: 10px 0;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  h4 {
+    font-size: 24px;
+  }
+
+  p {
+    margin: 10px 0;
+  }
+  
+
+  /************************** NAV BAR *****************************/
+
+  .navbar {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    height: 120px;
+    position: relative;
+  }
+
+  .navbar .flex {
+    justify-content: space-between;
+  }
+
+  .navbar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+  }
+
+  .navbar h1 {
+    font-size: 3em;
+  }
+
+  .navbar ul {
+    display: flex;
+  }
+
+  .navbar a {
+    color: var(--secondary-color);
+    font-size: 1.2em; 
+    padding: 5px ;
+    margin: 0 10px;
+  }
+
+  .navbar::before, .navbar::after {
+    content: '';
+    position: absolute;
+    height: 105px;
+    bottom: -70px;
+    right: 0;
+    left: 0;
+    transform: skewY(-2deg);
+    background-color: var(--primary-color);
+    z-index: 100;
+    -webkit-transform: skewY(-2deg);
+    -moz-transform: skewY(-2deg);
+    -ms-transform: skewY(-2deg);
+  }
+
+/************************** HERO *****************************/
+
+.hero {
+  background-color: var(--secondary-color);
+  height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.hero .container h2 {
+  margin-top: 100px;
+  font-size: 48px;
+}
+
+.hero:before, .hero:after {
+  content: '';
+  position: absolute;
+  height: 105px;
+  bottom: -70px;
+  right: 0;
+  left: 0;
+  transform: skewY(2deg);
+  background-color: var(--secondary-color);
+  z-index: 100;
+  -webkit-transform: skewY(2deg);
+  -moz-transform: skewY(2deg);
+  -ms-transform: skewY(2deg);
+}
+
+
+/************************** ABOUT *****************************/
+
+#about {
+  background: #fff;
+  padding: 50px 0;
+  position: relative;
+}
+
+#about-container {
+  padding: 0;
+}
+
+#about p {
+  font-size: 18px;
+}
+
+#about .grid {
+  grid-template-rows: 1fr 3fr;
+  padding: 100px 0 50px;
+}
+
+.about .grid h3 {
+  grid-column: span 2 / 1;
+  grid-row: 1
+}
+
+#about .grid .about-part-1 {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#about .grid .about-part-2 {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.about-class {
+  padding: 50px 0;
+}
+
+.about-class:before, .about-class:after {
+  content: '';
+  position: absolute;
+  height: 105px;
+  bottom: -70px;
+  right: 0;
+  left: 0;
+  transform: skewY(2deg);
+  background-color: #fff;
+  z-index: 100;
+  -webkit-transform: skewY(2deg);
+  -moz-transform: skewY(2deg);
+  -ms-transform: skewY(2deg);
+}
+
+/************************** WORK *****************************/
+
+#work {
+  background-color: var(--dark-color);
+  color: var(--secondary-color);
+  padding: 100px 0 0 0;
+  position: relative;
+}
+
+.work-class {
+  margin-bottom: 0;
+}
+
+#work .grid {
+  grid-template-columns: 30% 30% 30%;
+  gap: 50px;
+  padding: 100px 30px 0 30px;
+}
+
+#work .third-width {
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+}
+
+#work i {
+  margin: 0 auto 20px;
+  height: 100px;
+}
+
+#work h3,
+#work p {
+  text-align: center;
+  margin: 0 auto 30px;
+}
+
+.work-class:before, .work-class:after {
+  content: '';
+  position: absolute;
+  height: 105px;
+  bottom: -70px;
+  right: 0;
+  left: 0;
+  transform: skewY(2deg);
+  background-color: inherit;
+  z-index: 100;
+}
+
+/************************** CONTACT *****************************/
+
+#contact-section {
+  background: #457B9D;
+  padding: 150px 0 100px;
+  position: relative;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact-section .contact-section-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 0;
+  margin: 0;
+}
+
+#contact-card ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact-card a {
+  font-size: 24px;
+}
+
+#contact-container-grid img {
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.email-header i {
+  margin-right: 10px;
+}
+
+.contact-section:before {
+  content: '';
+  position: absolute;
+  height: 105px;
+  bottom: -70px;
+  right: 0;
+  left: 0;
+  transform: skewY(-2deg);
+  background-color: var(--primary-color);
+  z-index: 100;
+}
+
+/************************** FOOTER *****************************/
+
+footer {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  position: relative;
+  z-index: 2;
+}
+
+.copyright {
+  text-align: center;
+}
+
+.copyright p {
+  margin: 20px 0;
+}
+
+footer::before, footer::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100px;
+  background-color: var(--accent-color);
+  transform: skewY(-2deg);
+  position: absolute; 
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  z-index: -1;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   Media Queries for Responsive Design.
+   ========================================================================== */
+
+
+/* Tablets and Under */
+
+@media only screen and (max-width: 1200px) {
+    
+  /* About Section: Tablet Styles */
+
+  .about-container .grid,
+  #about .grid {
+    display: block;
+    padding-bottom: 0;
+  }
+
+  .about .grid h3 {
+    grid-column: 1;
+    grid-row: 1
+  }
+
+  #about .about-container .grid {
+    padding: 30px 0 0 0;
+  }
+
+  #about p {
+    margin: 30px 0;
+  }
+
+  /* Work Section: Tablet Styles */
+
+  #work .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  #work #first-third {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  #work #second-third {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  #work #third-third {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+  }
+
+  #work #third-third p {
+    width: 45%;
+  }
+
+  /* Contact Section: Tablet Styles */
+
+  #contact-container-grid {
+    grid-template-columns: 517px;
+    grid-template-rows: 344px 344px;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+/* Mobile */
+
+@media only screen and (max-width: 600px) {
+
+  #contact-container-grid {
+    display: block;
+    text-align: center;
+  }
+
+  #contact-container-grid img {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  #contact-card {
+    padding: 0 10px;
+  }
+
+  .navbar {
+    height: auto;
+    margin-bottom: 30px;
+  }
+
+  .navbar .flex {
+    flex-direction: column;
+  }
+
+  .navbar ul {
+    padding: 10px;
+    display: block;
+    text-align: center;
+  }
+
+  .navbar ul li {
+    margin-top: 10px;
+  }
+
+  /* Remove slanted divs for mobile */
+
+  .navbar::before, .navbar::after,
+  .hero::before, .hero::after,
+  #about::before, #about::after,
+  #work::before, #work::after,
+  footer::after {
+    z-index: -100;
+  }
+
+  .hero {
+    height: auto;
+    padding-bottom: 80px;
+    font-size: 36px;
+  }
+
+  #about {
+    padding-top: 0;
+  }
+
+  #about p {
+    padding-bottom: 20px;
+  }
+
+  #work {
+    padding-top: 0;
+    padding-bottom: 60px;
+  }
+
+  #work .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  #work #first-third {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  #work #second-third {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  #work #third-third {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  #work .third-width {
+    width: 100%;
+  }
+
+  #work .third-width p {
+    margin: 0 0 10px 0;
+    width: 60%;
+  }
+
+  #work i {
+    margin: 0;
+  }
+
+  #contact-section {
+    padding-top: 60px;
+  }
+
+  #contact-card ul {
+    padding-bottom: 30px;
+  }
+
+}
+
+/* Tiny Mobile */
+
+@media only screen and (max-width: 380px) {
+
+  #contact-card ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+  }
+
+  #contact-card {
+    grid-template-rows: 1fr 1fr 1fr 2fr;
+  }
+
+/* Print */
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
